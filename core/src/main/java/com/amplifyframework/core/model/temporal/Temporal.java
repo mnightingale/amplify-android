@@ -18,6 +18,7 @@ package com.amplifyframework.core.model.temporal;
 import androidx.annotation.NonNull;
 import androidx.core.util.ObjectsCompat;
 
+import java.io.Serializable;
 import java.time.Instant;
 import java.time.LocalDate;
 import java.time.LocalTime;
@@ -50,7 +51,9 @@ public final class Temporal {
      * <p>
      * https://docs.aws.amazon.com/appsync/latest/devguide/scalars.html#appsync-defined-scalars
      */
-    public static final class Date {
+    public static final class Date implements Serializable {
+        private static final long serialVersionUID = 1L;
+
         private final LocalDate localDate;
         private final ZoneOffset zoneOffset;
 
@@ -185,7 +188,9 @@ public final class Temporal {
      * <p>
      * https://docs.aws.amazon.com/appsync/latest/devguide/scalars.html#appsync-defined-scalars
      */
-    public static final class DateTime {
+    public static final class DateTime implements Serializable {
+        private static final long serialVersionUID = 1L;
+
         private final OffsetDateTime offsetDateTime;
 
         /**
@@ -272,7 +277,9 @@ public final class Temporal {
      * <p>
      * https://docs.aws.amazon.com/appsync/latest/devguide/scalars.html#appsync-defined-scalars
      */
-    public static final class Time {
+    public static final class Time implements Serializable {
+        private static final long serialVersionUID = 1L;
+
         private final LocalTime localTime;
         private final ZoneOffset zoneOffset;
 
@@ -399,7 +406,9 @@ public final class Temporal {
      * Negative values are also accepted and these represent the number of seconds
      * til 1970-01-01T00:00Z.
      */
-    public static final class Timestamp {
+    public static final class Timestamp implements Serializable {
+        private static final long serialVersionUID = 1L;
+
         private final long secondsSinceEpoch;
 
         /**
